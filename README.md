@@ -119,4 +119,4 @@
 
 Українська спільнота активно працює над довідником по Space Station 14 [тут](https://ss14.miraheze.org/wiki/%D0%A5%D1%96%D0%BC%D1%96%D1%8F).
 
-Dynexust не бань
+**Dynexust** не бань
