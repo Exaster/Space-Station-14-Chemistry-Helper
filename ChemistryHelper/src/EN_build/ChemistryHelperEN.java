@@ -467,7 +467,14 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 		setTitle("EN Chemistry Helper");
 		setSize(470,200);
 		setVisible(true);
-		setAlwaysOnTop(true);		
+		setAlwaysOnTop(true);
+		addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                System.out.println("Erasing Thread to free RAM");
+                System.exit(0);
+            }
+        });
 	}
 	public static JButton createButton(String text, JPanel panel, ActionListener actionListener) {
 	    JButton button = new JButton(text);

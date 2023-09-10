@@ -213,14 +213,14 @@ public class ChemistryHelperUA extends JFrame implements ActionListener {
 			        "Диловен (отруєння, * мг)"
 			    );
 			});
-		JButton ДексалінПлюс = createButton("Dexaline+", МедичнаПанель,(ActionEvent e) -> {
+		JButton ДексалінПлюс = createButton("Дексалін+", МедичнаПанель,(ActionEvent e) -> {
 			    make(
 			        доза_20,
 			        Кисень,
 			        доза_30,
 			        Залізо,
 			        Вуглець,
-			        "Декасалін Плюс (асфіксія, * мг) plasma!"
+			        "Декасалін+ (асфіксія, * мг) plasma!"
 			    );
 			});
 		JButton Аризатрин = createButton("Аризатрин", МедичнаПанель,(ActionEvent e) -> {
@@ -405,76 +405,86 @@ public class ChemistryHelperUA extends JFrame implements ActionListener {
 			    );
 			});		
 		//_______________________________Кнопки панелі тестування_________________________________________________________//
-		JButton btnКисень = createButton("Кисень", ПанельТестування,(ActionEvent e) -> {make(Кисень,"Кисень");});
-		JButton btnАзот = createButton("Азот", ПанельТестування,(ActionEvent e) -> {make(Азот,"Азот");});
-		JButton btnВуглець = createButton("Вуглець", ПанельТестування,(ActionEvent e) -> {make(Вуглець,"Вуглець");});
-		JButton btnЦукор = createButton("Цукор", ПанельТестування,(ActionEvent e) -> {make(Цукор,"Цукор");});
-		JButton btnХлор = createButton("Хлор", ПанельТестування,(ActionEvent e) -> {make(Хлор,"Хлор");});
-		JButton btnФосфор = createButton("Фосфор", ПанельТестування,(ActionEvent e) -> {make(Фосфор,"Фосфор");});
-		JButton btnКалій = createButton("Калій", ПанельТестування,(ActionEvent e) -> {make(Калій,"Калій");});
-		JButton btnРадій = createButton("Радій", ПанельТестування,(ActionEvent e) -> {make(Радій,"Радій");});
-		JButton btnКремній = createButton("Кремній", ПанельТестування,(ActionEvent e) -> {make(Вуглець,"Цукор");});
-		JButton btnСірка = createButton("Сірка", ПанельТестування,(ActionEvent e) -> {make(Сірка,"Сірка");});
-		JButton btnЕтанол = createButton("Етанол", ПанельТестування,(ActionEvent e) -> {make(Етанол,"Етанол");});
-		JButton btnЗалізо = createButton("Залізо", ПанельТестування,(ActionEvent e) -> {make(Залізо,"Залізо");});
-		JButton btnЛітій = createButton("Літій", ПанельТестування,(ActionEvent e) -> {make(Літій,"Літій");});
-		JButton btnРтуть = createButton("Ртуть", ПанельТестування,(ActionEvent e) -> {make(Вуглець,"Цукор");});
-		JButton btnФтор = createButton("Фтор", ПанельТестування,(ActionEvent e) -> {make(Фтор,"Фтор");});
-		JButton btnВодень = createButton("Водень", ПанельТестування,(ActionEvent e) -> {make(Водень,"Водень");});
-		JButton btnНатрій = createButton("Натрій", ПанельТестування,(ActionEvent e) -> {make(Натрій,"Натрій");});
-		JButton btnАлюміній = createButton("Алюміній", ПанельТестування,(ActionEvent e) -> {make(Алюміній,"Алюміній");});
-		JButton доза_1u = createButton("1u", ПанельТестування,(ActionEvent e) -> {make(доза_1,"доза 1");});
-		JButton доза_5u = createButton("5u", ПанельТестування,(ActionEvent e) -> {make(доза_5,"доза 5");});
-		JButton доза_10u = createButton("10u", ПанельТестування,(ActionEvent e) -> {make(доза_10,"доза 10");});
-		JButton доза_15u = createButton("15u", ПанельТестування,(ActionEvent e) -> {make(доза_15,"доза 15");});
-		JButton доза_20u = createButton("20u", ПанельТестування,(ActionEvent e) -> {make(доза_20,"доза 20");});
-		JButton доза_25u = createButton("25u", ПанельТестування,(ActionEvent e) -> {make(доза_25,"доза 25");});
-		JButton доза_30u = createButton("30u", ПанельТестування,(ActionEvent e) -> {make(доза_30,"доза 30");});
-		JButton доза_50u = createButton("50u", ПанельТестування,(ActionEvent e) -> {make(доза_50,"доза 50");});
-		JButton доза_100u = createButton("100u", ПанельТестування,(ActionEvent e) -> {make(доза_100,"доза 100");});
-		JButton btnДозаторStartPosition = createButton("Дозатор початок", ПанельТестування,(ActionEvent e) -> {moveFromTo(ДозаторStartPosition, ДозаторStartPosition);});
-		JButton disДозаторEndPosition = createButton("Дозатор кінець", ПанельТестування,(ActionEvent e) -> {moveFromTo(ДозаторEndPosition, ДозаторEndPosition);});
-		JButton btnChemMasterStartPosition = createButton("Chem початок", ПанельТестування,(ActionEvent e) -> {moveFromTo(ChemMasterStartPosition, ChemMasterStartPosition);});
-		JButton btnChemMasterEndPosition = createButton("Chem кінець", ПанельТестування,(ActionEvent e) -> {moveFromTo(ChemMasterEndPosition, ChemMasterEndPosition);});
+		createButton("Кисень", ПанельТестування, (ActionEvent e) -> { make(Кисень, "Кисень"); });
+		createButton("Азот", ПанельТестування, (ActionEvent e) -> { make(Азот, "Азот"); });
+		createButton("Вуглець", ПанельТестування, (ActionEvent e) -> { make(Вуглець, "Вуглець"); });
+		createButton("Цукор", ПанельТестування, (ActionEvent e) -> { make(Цукор, "Цукор"); });
+		createButton("Хлор", ПанельТестування, (ActionEvent e) -> { make(Хлор, "Хлор"); });
+		createButton("Фосфор", ПанельТестування, (ActionEvent e) -> { make(Фосфор, "Фосфор"); });
+		createButton("Калій", ПанельТестування, (ActionEvent e) -> { make(Калій, "Калій"); });
+		createButton("Радій", ПанельТестування, (ActionEvent e) -> { make(Радій, "Радій"); });
+		createButton("Кремній", ПанельТестування, (ActionEvent e) -> { make(Вуглець, "Цукор"); });
+		createButton("Сірка", ПанельТестування, (ActionEvent e) -> { make(Сірка, "Сірка"); });
+		createButton("Етанол", ПанельТестування, (ActionEvent e) -> { make(Етанол, "Етанол"); });
+		createButton("Залізо", ПанельТестування, (ActionEvent e) -> { make(Залізо, "Залізо"); });
+		createButton("Літій", ПанельТестування, (ActionEvent e) -> { make(Літій, "Літій"); });
+		createButton("Ртуть", ПанельТестування, (ActionEvent e) -> { make(Вуглець, "Цукор"); });
+		createButton("Фтор", ПанельТестування, (ActionEvent e) -> { make(Фтор, "Фтор"); });
+		createButton("Водень", ПанельТестування, (ActionEvent e) -> { make(Водень, "Водень"); });
+		createButton("Натрій", ПанельТестування, (ActionEvent e) -> { make(Натрій, "Натрій"); });
+		createButton("Алюміній", ПанельТестування, (ActionEvent e) -> { make(Алюміній, "Алюміній"); });
+		createButton("1u", ПанельТестування, (ActionEvent e) -> { make(доза_1, "доза 1"); });
+		createButton("5u", ПанельТестування, (ActionEvent e) -> { make(доза_5, "доза 5"); });
+		createButton("10u", ПанельТестування, (ActionEvent e) -> { make(доза_10, "доза 10"); });
+		createButton("15u", ПанельТестування, (ActionEvent e) -> { make(доза_15, "доза 15"); });
+		createButton("20u", ПанельТестування, (ActionEvent e) -> { make(доза_20, "доза 20"); });
+		createButton("25u", ПанельТестування, (ActionEvent e) -> { make(доза_25, "доза 25"); });
+		createButton("30u", ПанельТестування, (ActionEvent e) -> { make(доза_30, "доза 30"); });
+		createButton("50u", ПанельТестування, (ActionEvent e) -> { make(доза_50, "доза 50"); });
+		createButton("100u", ПанельТестування, (ActionEvent e) -> { make(доза_100, "доза 100"); });
+		createButton("Дозатор початок", ПанельТестування, (ActionEvent e) -> { moveFromTo(ДозаторStartPosition, ДозаторStartPosition); });
+		createButton("Дозатор кінець", ПанельТестування, (ActionEvent e) -> { moveFromTo(ДозаторEndPosition, ДозаторEndPosition); });
+		createButton("Chem початок", ПанельТестування, (ActionEvent e) -> { moveFromTo(ChemMasterStartPosition, ChemMasterStartPosition); });
+		createButton("Chem кінець", ПанельТестування, (ActionEvent e) -> { moveFromTo(ChemMasterEndPosition, ChemMasterEndPosition); });
+
 		//_______________________________Кнопки панелі налаштувань_________________________________________________________//
-		JButton setКисень = createButton("Кисень", ПанельНалаштувань,(ActionEvent e) -> {setCoords(1,"Кисень");});
-		JButton setАзот = createButton("Азот", ПанельНалаштувань,(ActionEvent e) -> {setCoords(2,"Азот");});
-		JButton setВуглець = createButton("Цукор", ПанельНалаштувань,(ActionEvent e) -> {setCoords(3,"Вуглець");});
-		JButton setЦукор = createButton("Цукор", ПанельНалаштувань,(ActionEvent e) -> {setCoords(4,"Цукор");});
-		JButton setХлор = createButton("Хлор", ПанельНалаштувань,(ActionEvent e) -> {setCoords(5,"Хлор");});
-		JButton setФосфор = createButton("Фосфор", ПанельНалаштувань,(ActionEvent e) -> {setCoords(6,"Фосфор");});
-		JButton setКалій = createButton("Калій", ПанельНалаштувань,(ActionEvent e) -> {setCoords(7,"Калій");});
-		JButton setРадій = createButton("Радій", ПанельНалаштувань,(ActionEvent e) -> {setCoords(8,"Радій");});
-		JButton setКремній = createButton("Кремній", ПанельНалаштувань,(ActionEvent e) -> {setCoords(9,"Кремній");});
-		JButton setСірка = createButton("Сірка", ПанельНалаштувань,(ActionEvent e) -> {setCoords(10,"Сірка");});
-		JButton setЕтанол = createButton("Етанол", ПанельНалаштувань,(ActionEvent e) -> {setCoords(11,"Етанол");});
-		JButton setЗалізо = createButton("Залізо", ПанельНалаштувань,(ActionEvent e) -> {setCoords(12,"Залізо");});
-		JButton setЛітій = createButton("Літій", ПанельНалаштувань,(ActionEvent e) -> {setCoords(13,"Літій");});
-		JButton setРтуть = createButton("Ртуть", ПанельНалаштувань,(ActionEvent e) -> {setCoords(14,"Ртуть");});
-		JButton setФтор = createButton("Фтор", ПанельНалаштувань,(ActionEvent e) -> {setCoords(15,"Фтор");});
-		JButton setВодень = createButton("Водень", ПанельНалаштувань,(ActionEvent e) -> {setCoords(16,"Водень");});
-		JButton setНатрій = createButton("Натрій", ПанельНалаштувань,(ActionEvent e) -> {setCoords(17,"Натрій");});
-		JButton setАлюміній = createButton("Алюміній", ПанельНалаштувань,(ActionEvent e) -> {setCoords(18,"Алюміній");});
-		JButton setДозація_1у = createButton("1u", ПанельНалаштувань,(ActionEvent e) -> {setCoords(19,"1u");});
-		JButton setДозація_5у = createButton("5u", ПанельНалаштувань,(ActionEvent e) -> {setCoords(20,"5u");});
-		JButton setДозація_10у = createButton("5u", ПанельНалаштувань,(ActionEvent e) -> {setCoords(21,"10u");});
-		JButton setДозація_15у = createButton("10u", ПанельНалаштувань,(ActionEvent e) -> {setCoords(22,"15u");});
-		JButton setДозація_20у = createButton("15u", ПанельНалаштувань,(ActionEvent e) -> {setCoords(23,"20u");});
-		JButton setДозація_25у = createButton("20u", ПанельНалаштувань,(ActionEvent e) -> {setCoords(24,"25u");});
-		JButton setДозація_30у = createButton("25u", ПанельНалаштувань,(ActionEvent e) -> {setCoords(25,"30u");});
-		JButton setДозація_50у = createButton("50u", ПанельНалаштувань,(ActionEvent e) -> {setCoords(26,"50u");});
-		JButton setДозація_100у = createButton("100u", ПанельНалаштувань,(ActionEvent e) -> {setCoords(27,"100u");});
-		JButton setПочаткова_позиція_дозатора = createButton("Початкова_позиція_дозатора", ПанельНалаштувань,(ActionEvent e) -> {setCoords(28,"Кисень");});
-		JButton setКінцева_позиція_дозатора = createButton("Кінцева_позиція_дозатора", ПанельНалаштувань,(ActionEvent e) -> {setCoords(29,"Кисень");});
-		JButton setПочаткова_позиція_ChemMaster = createButton("Початкова_позиція_ChemMaster", ПанельНалаштувань,(ActionEvent e) -> {setCoords(30,"Кисень");});
-		JButton setКінцева_позиція_ChemMaster = createButton("Кінцева_позиція_ChemMaster", ПанельНалаштувань,(ActionEvent e) -> {setCoords(31,"Кисень");});
+		createButton("Кисень", ПанельНалаштувань, (ActionEvent e) -> { setCoords(1, "Кисень"); });
+		createButton("Азот", ПанельНалаштувань, (ActionEvent e) -> { setCoords(2, "Азот"); });
+		createButton("Вуглець", ПанельНалаштувань, (ActionEvent e) -> { setCoords(3, "Вуглець"); });
+		createButton("Цукор", ПанельНалаштувань, (ActionEvent e) -> { setCoords(4, "Цукор"); });
+		createButton("Хлор", ПанельНалаштувань, (ActionEvent e) -> { setCoords(5, "Хлор"); });
+		createButton("Фосфор", ПанельНалаштувань, (ActionEvent e) -> { setCoords(6, "Фосфор"); });
+		createButton("Калій", ПанельНалаштувань, (ActionEvent e) -> { setCoords(7, "Калій"); });
+		createButton("Радій", ПанельНалаштувань, (ActionEvent e) -> { setCoords(8, "Радій"); });
+		createButton("Кремній", ПанельНалаштувань, (ActionEvent e) -> { setCoords(9, "Кремній"); });
+		createButton("Сірка", ПанельНалаштувань, (ActionEvent e) -> { setCoords(10, "Сірка"); });
+		createButton("Етанол", ПанельНалаштувань, (ActionEvent e) -> { setCoords(11, "Етанол"); });
+		createButton("Залізо", ПанельНалаштувань, (ActionEvent e) -> { setCoords(12, "Залізо"); });
+		createButton("Літій", ПанельНалаштувань, (ActionEvent e) -> { setCoords(13, "Літій"); });
+		createButton("Ртуть", ПанельНалаштувань, (ActionEvent e) -> { setCoords(14, "Ртуть"); });
+		createButton("Фтор", ПанельНалаштувань, (ActionEvent e) -> { setCoords(15, "Фтор"); });
+		createButton("Водень", ПанельНалаштувань, (ActionEvent e) -> { setCoords(16, "Водень"); });
+		createButton("Натрій", ПанельНалаштувань, (ActionEvent e) -> { setCoords(17, "Натрій"); });
+		createButton("Алюміній", ПанельНалаштувань, (ActionEvent e) -> { setCoords(18, "Алюміній"); });
+		createButton("1u", ПанельНалаштувань, (ActionEvent e) -> { setCoords(19, "1u"); });
+		createButton("5u", ПанельНалаштувань, (ActionEvent e) -> { setCoords(20, "5u"); });
+		createButton("10u", ПанельНалаштувань, (ActionEvent e) -> { setCoords(21, "10u"); });
+		createButton("15u", ПанельНалаштувань, (ActionEvent e) -> { setCoords(22, "15u"); });
+		createButton("20u", ПанельНалаштувань, (ActionEvent e) -> { setCoords(23, "20u"); });
+		createButton("25u", ПанельНалаштувань, (ActionEvent e) -> { setCoords(24, "25u"); });
+		createButton("30u", ПанельНалаштувань, (ActionEvent e) -> { setCoords(25, "30u"); });
+		createButton("50u", ПанельНалаштувань, (ActionEvent e) -> { setCoords(26, "50u"); });
+		createButton("100u", ПанельНалаштувань, (ActionEvent e) -> { setCoords(27, "100u"); });
+		createButton("Початкова_позиція_дозатора", ПанельНалаштувань, (ActionEvent e) -> { setCoords(28, "Дозатор початок"); });
+		createButton("Кінцева_позиція_дозатора", ПанельНалаштувань, (ActionEvent e) -> { setCoords(29, "Дозатор кінцеь"); });
+		createButton("Початкова_позиція_ChemMaster", ПанельНалаштувань, (ActionEvent e) -> { setCoords(30, "Chem початок"); });
+		createButton("Кінцева_позиція_ChemMaster", ПанельНалаштувань, (ActionEvent e) -> { setCoords(31, "Chem кінець"); });
+
 		Thread configFileThread = new Thread(() -> watchConfigFile(configFile));
 		configFileThread.start();		
 		menuPanel.add(openFolderButton, BorderLayout.WEST);
 		setTitle("Помічник хіміка");
-		setSize(470,200);
+		setSize(400,200);
 		setVisible(true);
 		setAlwaysOnTop(true);		
+		
+		addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                System.out.println("Вимикаю потік зчитування файла");
+                System.exit(0);
+            }
+        });
 	}
 	public static JButton createButton(String text, JPanel panel, ActionListener actionListener) {
 	    JButton button = new JButton(text);
