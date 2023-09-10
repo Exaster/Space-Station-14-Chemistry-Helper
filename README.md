@@ -1,2 +1,27 @@
-# Space-Station-14-Chemistry-Helper
-Chemistry Helper for newbies or mad chemists. This program not affect base game code, just simple bot GUI program which is a bit flexible due to config file.
+![Space Station 14](https://cdn.cloudflare.steamstatic.com/steam/apps/1255460/capsule_616x353.jpg?t=1684170495)
+
+# Для новачків
+
+## Загальна інформація
+
+Це репозиторій для новачків. Тут ви знайдете корисну інформацію та ресурси для початку роботи.
+
+## Огляд
+
+- [Початковий крок](#початковий-крок)
+- [Документація](#документація)
+- [Підтримка](#підтримка)
+
+## Початковий крок
+
+1. Спочатку зробіть це.
+2. Потім зробіть інше.
+3. Продовжуйте діяти крок за кроком.
+
+## Документація
+
+Докладну документацію ви можете знайти [тут](link_to_documentation).
+
+## Підтримка
+
+Якщо у вас є питання або потребуєте допомоги, будь ласка, зверніться до нашої спільноти або [створ
