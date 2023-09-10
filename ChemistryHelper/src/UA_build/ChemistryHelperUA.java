@@ -380,10 +380,13 @@ public class ChemistryHelperUA extends JFrame implements ActionListener {
 			        доза_10,
 			        Водень,
 			        Водень,
-			        Водень,
-			        Азот,
-			        Кремній,
+			        Водень,			       
 			        Калій,
+			        Калій,
+			        Калій,
+			        Калій,
+			        доза_50,
+			        Азот,
 			        Азот,
 			        "Дуже різкий смак, викликає нудоту"
 			    );
@@ -421,14 +424,14 @@ public class ChemistryHelperUA extends JFrame implements ActionListener {
 		JButton btnНатрій = createButton("Натрій", ПанельТестування,(ActionEvent e) -> {make(Натрій,"Натрій");});
 		JButton btnАлюміній = createButton("Алюміній", ПанельТестування,(ActionEvent e) -> {make(Алюміній,"Алюміній");});
 		JButton доза_1u = createButton("1u", ПанельТестування,(ActionEvent e) -> {make(доза_1,"доза 1");});
-		JButton доза_5u = createButton("5u", ПанельТестування,(ActionEvent e) -> {make(доза_1,"доза 5");});
-		JButton доза_10u = createButton("10u", ПанельТестування,(ActionEvent e) -> {make(доза_1,"доза 10");});
-		JButton доза_15u = createButton("15u", ПанельТестування,(ActionEvent e) -> {make(доза_1,"доза 15");});
-		JButton доза_20u = createButton("20u", ПанельТестування,(ActionEvent e) -> {make(доза_1,"доза 20");});
-		JButton доза_25u = createButton("25u", ПанельТестування,(ActionEvent e) -> {make(доза_1,"доза 25");});
-		JButton доза_30u = createButton("30u", ПанельТестування,(ActionEvent e) -> {make(доза_1,"доза 30");});
-		JButton доза_50u = createButton("50u", ПанельТестування,(ActionEvent e) -> {make(доза_1,"доза 50");});
-		JButton доза_100u = createButton("100u", ПанельТестування,(ActionEvent e) -> {make(доза_1,"доза 100");});
+		JButton доза_5u = createButton("5u", ПанельТестування,(ActionEvent e) -> {make(доза_5,"доза 5");});
+		JButton доза_10u = createButton("10u", ПанельТестування,(ActionEvent e) -> {make(доза_10,"доза 10");});
+		JButton доза_15u = createButton("15u", ПанельТестування,(ActionEvent e) -> {make(доза_15,"доза 15");});
+		JButton доза_20u = createButton("20u", ПанельТестування,(ActionEvent e) -> {make(доза_20,"доза 20");});
+		JButton доза_25u = createButton("25u", ПанельТестування,(ActionEvent e) -> {make(доза_25,"доза 25");});
+		JButton доза_30u = createButton("30u", ПанельТестування,(ActionEvent e) -> {make(доза_30,"доза 30");});
+		JButton доза_50u = createButton("50u", ПанельТестування,(ActionEvent e) -> {make(доза_50,"доза 50");});
+		JButton доза_100u = createButton("100u", ПанельТестування,(ActionEvent e) -> {make(доза_100,"доза 100");});
 		JButton btnДозаторStartPosition = createButton("Дозатор початок", ПанельТестування,(ActionEvent e) -> {moveFromTo(ДозаторStartPosition, ДозаторStartPosition);});
 		JButton disДозаторEndPosition = createButton("Дозатор кінець", ПанельТестування,(ActionEvent e) -> {moveFromTo(ДозаторEndPosition, ДозаторEndPosition);});
 		JButton btnChemMasterStartPosition = createButton("Chem початок", ПанельТестування,(ActionEvent e) -> {moveFromTo(ChemMasterStartPosition, ChemMasterStartPosition);});

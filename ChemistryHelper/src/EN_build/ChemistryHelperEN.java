@@ -27,7 +27,7 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 	public static int[][] Carbon;
 	public static int[][] Sugar;
 	public static int[][] Chlorine;
-	public static int[][] Фосфор;
+	public static int[][] Phosphorus;
 	public static int[][] Potassium;
 	public static int[][] Radium;
 	public static int[][] Silicon;
@@ -97,7 +97,6 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 		button5.addActionListener(this);
 		button6.addActionListener(this);
 		
-
 		// Add buttons to the menu panel
 		menuPanel.add(button1);
 		menuPanel.add(button2);
@@ -173,10 +172,10 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 			}
 		});		
 		
-		JButton MoveDispencer = createButton("Дозатор", MedicalPanel,(ActionEvent e) -> {moveFromTo(DispenserStartPosition, DispenserEndPosition);});
-		JButton MoveMaster = createButton("ChemMaster", MedicalPanel,(ActionEvent e) -> {moveFromTo(ChemMasterStartPosition, ChemMasterEndPosition);});		
-		JButton Bicardine = createButton("Bicardine", MedicalPanel,(ActionEvent e) -> {
-			    make(
+		createButton("Dispencer", MedicalPanel,(ActionEvent e) -> {moveFromTo(DispenserStartPosition, DispenserEndPosition);});
+		createButton("ChemMaster", MedicalPanel,(ActionEvent e) -> {moveFromTo(ChemMasterStartPosition, ChemMasterEndPosition);});		
+		createButton("Bicardine", MedicalPanel,(ActionEvent e) -> {
+			    mix(
 			        dosation_15,
 			        Oxygen,
 			        Sugar,
@@ -187,20 +186,20 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 			        "Bicardine (brute, * u)"
 			    );
 			});
-		JButton Dermaline = createButton("Dermaline", MedicalPanel,(ActionEvent e) -> {
-			    make(
+		createButton("Dermaline", MedicalPanel,(ActionEvent e) -> {
+			    mix(
 			        dosation_15,
 			        Silicon,
 			        Oxygen,
 			        Carbon,
 			        Oxygen,
-			        Фосфор,
-			        Фосфор,
+			        Phosphorus,
+			        Phosphorus,
 			        "Dermaline (burns, * u)"
 			    );
 			});
-		JButton Dylovene = createButton("Dylovene", MedicalPanel,(ActionEvent e) -> {
-			    make(
+		createButton("Dylovene", MedicalPanel,(ActionEvent e) -> {
+			    mix(
 			        dosation_30,
 			        Silicon,
 			        Potassium,
@@ -208,8 +207,8 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 			        "Dylovene (poisoning, * u)"
 			    );
 			});
-		JButton DexalinePlus = createButton("Dexaline+", MedicalPanel,(ActionEvent e) -> {
-			    make(
+		createButton("Dexaline+", MedicalPanel,(ActionEvent e) -> {
+			    mix(
 			        dosation_20,
 			        Oxygen,
 			        dosation_30,
@@ -218,8 +217,8 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 			        "Dexaline + (airloss, * u) plasma!"
 			    );
 			});
-		JButton Arizatrine = createButton("Arizatrine", MedicalPanel,(ActionEvent e) -> {
-			    make(
+		createButton("Arizatrine", MedicalPanel,(ActionEvent e) -> {
+			    mix(
 			        dosation_5,
 			        Silicon,
 			        Potassium,
@@ -231,15 +230,15 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 			        "Arizatrine (radiation, * u)"
 			    );
 			});
-		JButton Phalaximine = createButton("Phalaximine", MedicalPanel, (ActionEvent e) -> {
-			    make(
+		createButton("Phalaximine", MedicalPanel, (ActionEvent e) -> {
+			    mix(
 			        dosation_5,
 			        Nitrogen,
 			        Potassium,
 			        Silicon,
 			        dosation_10,
 			        Chlorine,
-			        Фосфор,
+			        Phosphorus,
 			        dosation_25,
 			        Radium,
 			        dosation_30,
@@ -247,8 +246,8 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 			        "Phalaximine (cancer cure, * u)"
 			    );
 			});
-		JButton Spaceacillin = createButton("Spaceacillin", MedicalPanel,(ActionEvent e) -> {
-			    make(
+		createButton("Spaceacillin", MedicalPanel,(ActionEvent e) -> {
+			    mix(
 			        dosation_15,
 			        Oxygen,
 			        Oxygen,
@@ -259,8 +258,8 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 			        "Spaceacillin "
 			    );
 			});
-		JButton TranexAcid = createButton("TranexAcid", MedicalPanel,(ActionEvent e) -> {
-			    make(
+		createButton("TranexAcid", MedicalPanel,(ActionEvent e) -> {
+			    mix(
 			        dosation_10,
 			        Oxygen,
 			        Sugar,
@@ -275,8 +274,8 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 			        "Tranex acid(* u)"
 			    );
 			});
-		JButton Tricodrazine = createButton("Tricodrazine", MedicalPanel,(ActionEvent e) -> {
-			    make(
+		createButton("Tricodrazine", MedicalPanel,(ActionEvent e) -> {
+			    mix(
 			        dosation_15,
 			        Oxygen,
 			        Sugar,
@@ -287,8 +286,8 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 			        "Vitamins"
 			    );
 			});		
-		JButton Chloralhydrate = createButton("Chloralhydrate", OtherPanel, (ActionEvent e) -> {
-			    make(
+		createButton("Chloralhydrate", OtherPanel, (ActionEvent e) -> {
+			    mix(
 			        dosation_20,
 			        Ethanol,
 			        dosation_100,
@@ -296,17 +295,17 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 			        "Chloralhydrate, 20 water!"
 			    );
 			});
-		JButton EZnutritient = createButton("EZnutritient", OtherPanel,(ActionEvent e) -> {
-			    make(
+		createButton("EZnutritient", OtherPanel,(ActionEvent e) -> {
+			    mix(
 			        dosation_30,
 			        Nitrogen,
-			        Фосфор,
+			        Phosphorus,
 			        Potassium,
 			        "Easy fertilizer"
 			    );
 			});
-		JButton SpaceDrugs = createButton("Drugs", OtherPanel,(ActionEvent e) -> {
-			    make(
+		createButton("Drugs", OtherPanel,(ActionEvent e) -> {
+			    mix(
 			        dosation_30,
 			        Lithium,
 			        Mercury,
@@ -314,8 +313,8 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 			        "Don`t share with sec!"
 			    );
 			});
-		JButton SpaceCleaner = createButton("SpaceCleaner", OtherPanel,(ActionEvent e) -> {
-			    make(
+		createButton("SpaceCleaner", OtherPanel,(ActionEvent e) -> {
+			    mix(
 			        dosation_15,
 			        Hydrogen,
 			        dosation_5,
@@ -324,31 +323,31 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 			        Chlorine,
 			        Sodium,
 			        Oxygen,
-			        "Cleaner"
+			        "Cleaner, 20u water needed"
 			    );
 			});
-		JButton Lube = createButton("Lube", OtherPanel,(ActionEvent e) -> {
-			    make(
+		createButton("Lube", OtherPanel,(ActionEvent e) -> {
+			    mix(
 			        dosation_30,
 			        Oxygen,
 			        Silicon,
 			        "Space Lube!30 water"
 			    );
 			});
-		JButton Mutagen = createButton("Мутаген", OtherPanel,(ActionEvent e) -> {
-			    make(
+		createButton("Мутаген", OtherPanel,(ActionEvent e) -> {
+			    mix(
 			        dosation_30,
 			        Chlorine,
-			        Фосфор,
+			        Phosphorus,
 			        Radium,
 			        "Unstable mutagen"
 			    );
 			});
-		JButton Robust = createButton("Robust", OtherPanel,(ActionEvent e) -> {
-			    make(
+		createButton("Robust", OtherPanel,(ActionEvent e) -> {
+			    mix(
 			        dosation_30,
 			        Nitrogen,
-			        Фосфор,
+			        Phosphorus,
 			        Potassium,
 			        dosation_1,
 			        Sulfur,
@@ -358,8 +357,8 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 			        "Robust"
 			    );
 			});
-		JButton AntiEthanol = createButton("AntiEthanol", OtherPanel,(ActionEvent e) -> {
-			    make(
+		createButton("AntiEthanol", OtherPanel,(ActionEvent e) -> {
+			    mix(
 			        dosation_10,
 			        Silicon,
 			        Potassium,
@@ -370,21 +369,24 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 			        "If beer sucks"
 			    );
 			});
-		JButton Ipecac  = createButton("Ipecac ", OtherPanel,(ActionEvent e) -> {
-			    make(
+		 createButton("Ipecac ", OtherPanel,(ActionEvent e) -> {
+			    mix(
 			        dosation_10,
 			        Hydrogen,
 			        Hydrogen,
 			        Hydrogen,
-			        Nitrogen,
-			        Silicon,
 			        Potassium,
+			        Potassium,
+			        Potassium,
+			        Potassium,
+			        dosation_50,
+			        Nitrogen,	
 			        Nitrogen,
 			        "Cause vommiting"
 			    );
 			});
-		JButton Fluorosurfactant = createButton("Fluorosurfactant", OtherPanel,(ActionEvent e) -> {
-			    make(
+		createButton("Fluorosurfactant", OtherPanel,(ActionEvent e) -> {
+			    mix(
 			        dosation_5,
 			        Hydrogen,
 			        Sulfur,
@@ -396,69 +398,69 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 			        "Foam with water"
 			    );
 			});		
-		JButton btnOxygen = createButton("Oxygen", TestPanel,(ActionEvent e) -> {make(Oxygen,"Oxygen");});
-		JButton btnNitrogen = createButton("Nitrogen", TestPanel,(ActionEvent e) -> {make(Nitrogen,"Nitrogen");});
-		JButton btnCarbon = createButton("Carbon", TestPanel,(ActionEvent e) -> {make(Carbon,"Carbon");});
-		JButton btnSugar = createButton("Sugar", TestPanel,(ActionEvent e) -> {make(Sugar,"Sugar");});
-		JButton btnChlorine = createButton("Chlorine", TestPanel,(ActionEvent e) -> {make(Chlorine,"Chlorine");});
-		JButton btnФосфор = createButton("Фосфор", TestPanel,(ActionEvent e) -> {make(Фосфор,"Фосфор");});
-		JButton btnPotassium = createButton("Potassium", TestPanel,(ActionEvent e) -> {make(Potassium,"Potassium");});
-		JButton btnRadium = createButton("Radium", TestPanel,(ActionEvent e) -> {make(Radium,"Radium");});
-		JButton btnSilicon = createButton("Silicon", TestPanel,(ActionEvent e) -> {make(Carbon,"Sugar");});
-		JButton btnSulfur = createButton("Sulfur", TestPanel,(ActionEvent e) -> {make(Sulfur,"Sulfur");});
-		JButton btnEthanol = createButton("Ethanol", TestPanel,(ActionEvent e) -> {make(Ethanol,"Ethanol");});
-		JButton btnIron = createButton("Iron", TestPanel,(ActionEvent e) -> {make(Iron,"Iron");});
-		JButton btnLithium = createButton("Lithium", TestPanel,(ActionEvent e) -> {make(Lithium,"Lithium");});
-		JButton btnMercury = createButton("Mercury", TestPanel,(ActionEvent e) -> {make(Carbon,"Sugar");});
-		JButton btnFluorine = createButton("Fluorine", TestPanel,(ActionEvent e) -> {make(Fluorine,"Fluorine");});
-		JButton btnHydrogen = createButton("Hydrogen", TestPanel,(ActionEvent e) -> {make(Hydrogen,"Hydrogen");});
-		JButton btnSodium = createButton("Sodium", TestPanel,(ActionEvent e) -> {make(Sodium,"Sodium");});
-		JButton btnAluminium = createButton("Aluminium", TestPanel,(ActionEvent e) -> {make(Aluminium,"Aluminium");});
-		JButton dosation_1u = createButton("1u", TestPanel,(ActionEvent e) -> {make(dosation_1,"доза 1");});
-		JButton dosation_5u = createButton("5u", TestPanel,(ActionEvent e) -> {make(dosation_1,"доза 5");});
-		JButton dosation_10u = createButton("10u", TestPanel,(ActionEvent e) -> {make(dosation_1,"доза 10");});
-		JButton dosation_15u = createButton("15u", TestPanel,(ActionEvent e) -> {make(dosation_1,"доза 15");});
-		JButton dosation_20u = createButton("20u", TestPanel,(ActionEvent e) -> {make(dosation_1,"доза 20");});
-		JButton dosation_25u = createButton("25u", TestPanel,(ActionEvent e) -> {make(dosation_1,"доза 25");});
-		JButton dosation_30u = createButton("30u", TestPanel,(ActionEvent e) -> {make(dosation_1,"доза 30");});
-		JButton dosation_50u = createButton("50u", TestPanel,(ActionEvent e) -> {make(dosation_1,"доза 50");});
-		JButton dosation_100u = createButton("100u", TestPanel,(ActionEvent e) -> {make(dosation_1,"доза 100");});
-		JButton btnDispenserStartPosition = createButton("Dispencer start", TestPanel,(ActionEvent e) -> {moveFromTo(DispenserStartPosition, DispenserStartPosition);});
-		JButton disDispenserEndPosition = createButton("Dispencer end", TestPanel,(ActionEvent e) -> {moveFromTo(DispenserEndPosition, DispenserEndPosition);});
-		JButton btnChemMasterStartPosition = createButton("Chem start", TestPanel,(ActionEvent e) -> {moveFromTo(ChemMasterStartPosition, ChemMasterStartPosition);});
-		JButton btnChemMasterEndPosition = createButton("Chem end", TestPanel,(ActionEvent e) -> {moveFromTo(ChemMasterEndPosition, ChemMasterEndPosition);});
+		createButton("Oxygen", TestPanel,(ActionEvent e) -> {mix(Oxygen,"Oxygen");});
+		createButton("Nitrogen", TestPanel,(ActionEvent e) -> {mix(Nitrogen,"Nitrogen");});
+		createButton("Carbon", TestPanel,(ActionEvent e) -> {mix(Carbon,"Carbon");});
+		createButton("Sugar", TestPanel,(ActionEvent e) -> {mix(Sugar,"Sugar");});
+		createButton("Chlorine", TestPanel,(ActionEvent e) -> {mix(Chlorine,"Chlorine");});
+		createButton("Phosphorus", TestPanel,(ActionEvent e) -> {mix(Phosphorus,"Phosphorus");});
+		createButton("Potassium", TestPanel,(ActionEvent e) -> {mix(Potassium,"Potassium");});
+		createButton("Radium", TestPanel,(ActionEvent e) -> {mix(Radium,"Radium");});
+		createButton("Silicon", TestPanel,(ActionEvent e) -> {mix(Carbon,"Sugar");});
+		createButton("Sulfur", TestPanel,(ActionEvent e) -> {mix(Sulfur,"Sulfur");});
+		createButton("Ethanol", TestPanel,(ActionEvent e) -> {mix(Ethanol,"Ethanol");});
+		createButton("Iron", TestPanel,(ActionEvent e) -> {mix(Iron,"Iron");});
+		createButton("Lithium", TestPanel,(ActionEvent e) -> {mix(Lithium,"Lithium");});
+		createButton("Mercury", TestPanel,(ActionEvent e) -> {mix(Carbon,"Sugar");});
+		createButton("Fluorine", TestPanel,(ActionEvent e) -> {mix(Fluorine,"Fluorine");});
+		createButton("Hydrogen", TestPanel,(ActionEvent e) -> {mix(Hydrogen,"Hydrogen");});
+		createButton("Sodium", TestPanel,(ActionEvent e) -> {mix(Sodium,"Sodium");});
+		createButton("Aluminium", TestPanel,(ActionEvent e) -> {mix(Aluminium,"Aluminium");});
+		createButton("1u", TestPanel,(ActionEvent e) -> {mix(dosation_1,"доза 1");});
+		createButton("5u", TestPanel,(ActionEvent e) -> {mix(dosation_5,"доза 5");});
+		createButton("10u", TestPanel,(ActionEvent e) -> {mix(dosation_10,"доза 10");});
+		createButton("15u", TestPanel,(ActionEvent e) -> {mix(dosation_15,"доза 15");});
+		createButton("20u", TestPanel,(ActionEvent e) -> {mix(dosation_20,"доза 20");});
+		createButton("25u", TestPanel,(ActionEvent e) -> {mix(dosation_25,"доза 25");});
+		createButton("30u", TestPanel,(ActionEvent e) -> {mix(dosation_30,"доза 30");});
+		createButton("50u", TestPanel,(ActionEvent e) -> {mix(dosation_50,"доза 50");});
+		createButton("100u", TestPanel,(ActionEvent e) -> {mix(dosation_100,"доза 100");});
+		createButton("Dispencer start", TestPanel,(ActionEvent e) -> {moveFromTo(DispenserStartPosition, DispenserStartPosition);});
+		createButton("Dispencer end", TestPanel,(ActionEvent e) -> {moveFromTo(DispenserEndPosition, DispenserEndPosition);});
+		createButton("Chem start", TestPanel,(ActionEvent e) -> {moveFromTo(ChemMasterStartPosition, ChemMasterStartPosition);});
+		createButton("Chem end", TestPanel,(ActionEvent e) -> {moveFromTo(ChemMasterEndPosition, ChemMasterEndPosition);});
 
-		JButton setOxygen = createButton("Oxygen", SettingsPanel,(ActionEvent e) -> {setCoords(1,"Oxygen");});
-		JButton setNitrogen = createButton("Nitrogen", SettingsPanel,(ActionEvent e) -> {setCoords(2,"Nitrogen");});
-		JButton setCarbon = createButton("Sugar", SettingsPanel,(ActionEvent e) -> {setCoords(3,"Carbon");});
-		JButton setSugar = createButton("Sugar", SettingsPanel,(ActionEvent e) -> {setCoords(4,"Sugar");});
-		JButton setChlorine = createButton("Chlorine", SettingsPanel,(ActionEvent e) -> {setCoords(5,"Chlorine");});
-		JButton setФосфор = createButton("Фосфор", SettingsPanel,(ActionEvent e) -> {setCoords(6,"Фосфор");});
-		JButton setPotassium = createButton("Potassium", SettingsPanel,(ActionEvent e) -> {setCoords(7,"Potassium");});
-		JButton setRadium = createButton("Radium", SettingsPanel,(ActionEvent e) -> {setCoords(8,"Radium");});
-		JButton setSilicon = createButton("Silicon", SettingsPanel,(ActionEvent e) -> {setCoords(9,"Silicon");});
-		JButton setSulfur = createButton("Sulfur", SettingsPanel,(ActionEvent e) -> {setCoords(10,"Sulfur");});
-		JButton setEthanol = createButton("Ethanol", SettingsPanel,(ActionEvent e) -> {setCoords(11,"Ethanol");});
-		JButton setIron = createButton("Iron", SettingsPanel,(ActionEvent e) -> {setCoords(12,"Iron");});
-		JButton setLithium = createButton("Lithium", SettingsPanel,(ActionEvent e) -> {setCoords(13,"Lithium");});
-		JButton setMercury = createButton("Mercury", SettingsPanel,(ActionEvent e) -> {setCoords(14,"Mercury");});
-		JButton setFluorine = createButton("Fluorine", SettingsPanel,(ActionEvent e) -> {setCoords(15,"Fluorine");});
-		JButton setHydrogen = createButton("Hydrogen", SettingsPanel,(ActionEvent e) -> {setCoords(16,"Hydrogen");});
-		JButton setSodium = createButton("Sodium", SettingsPanel,(ActionEvent e) -> {setCoords(17,"Sodium");});
-		JButton setAluminium = createButton("Aluminium", SettingsPanel,(ActionEvent e) -> {setCoords(18,"Aluminium");});
-		JButton setDosation_1u = createButton("1u", SettingsPanel,(ActionEvent e) -> {setCoords(19,"1u");});
-		JButton setDosation_5u = createButton("5u", SettingsPanel,(ActionEvent e) -> {setCoords(20,"5u");});
-		JButton setDosation_10u = createButton("5u", SettingsPanel,(ActionEvent e) -> {setCoords(21,"10u");});
-		JButton setDosation_15u = createButton("10u", SettingsPanel,(ActionEvent e) -> {setCoords(22,"15u");});
-		JButton setDosation_20u = createButton("15u", SettingsPanel,(ActionEvent e) -> {setCoords(23,"20u");});
-		JButton setDosation_25u = createButton("20u", SettingsPanel,(ActionEvent e) -> {setCoords(24,"25u");});
-		JButton setDosation_30u = createButton("25u", SettingsPanel,(ActionEvent e) -> {setCoords(25,"30u");});
-		JButton setDosation_50u = createButton("50u", SettingsPanel,(ActionEvent e) -> {setCoords(26,"50u");});
-		JButton setDosation_100u = createButton("100u", SettingsPanel,(ActionEvent e) -> {setCoords(27,"100u");});
-		JButton setDispencerStartPosition = createButton("DispencerStartPosition", SettingsPanel,(ActionEvent e) -> {setCoords(28,"Dispencer start position");});
-		JButton setDispencerEndPosition = createButton("setChemMasterStartPosition", SettingsPanel,(ActionEvent e) -> {setCoords(29,"Dispencer end position");});
-		JButton setChemMasterStartPosition = createButton("setChemMasterStartPosition", SettingsPanel,(ActionEvent e) -> {setCoords(30,"ChemMaster start position");});
-		JButton setChemMasterEndPosition = createButton("setChemMasterEndPosition", SettingsPanel,(ActionEvent e) -> {setCoords(31,"ChemMaster end position");});
+		createButton("Oxygen", SettingsPanel,(ActionEvent e) -> {setCoords(1,"Oxygen");});
+		createButton("Nitrogen", SettingsPanel,(ActionEvent e) -> {setCoords(2,"Nitrogen");});
+		createButton("Carbon", SettingsPanel,(ActionEvent e) -> {setCoords(3,"Carbon");});
+		createButton("Sugar", SettingsPanel,(ActionEvent e) -> {setCoords(4,"Sugar");});
+		createButton("Chlorine", SettingsPanel,(ActionEvent e) -> {setCoords(5,"Chlorine");});
+		createButton("Phosphorus", SettingsPanel,(ActionEvent e) -> {setCoords(6,"Phosphorus");});
+		createButton("Potassium", SettingsPanel,(ActionEvent e) -> {setCoords(7,"Potassium");});
+		createButton("Radium", SettingsPanel,(ActionEvent e) -> {setCoords(8,"Radium");});
+		createButton("Silicon", SettingsPanel,(ActionEvent e) -> {setCoords(9,"Silicon");});
+		createButton("Sulfur", SettingsPanel,(ActionEvent e) -> {setCoords(10,"Sulfur");});
+		createButton("Ethanol", SettingsPanel,(ActionEvent e) -> {setCoords(11,"Ethanol");});
+		createButton("Iron", SettingsPanel,(ActionEvent e) -> {setCoords(12,"Iron");});
+		createButton("Lithium", SettingsPanel,(ActionEvent e) -> {setCoords(13,"Lithium");});
+		createButton("Mercury", SettingsPanel,(ActionEvent e) -> {setCoords(14,"Mercury");});
+		createButton("Fluorine", SettingsPanel,(ActionEvent e) -> {setCoords(15,"Fluorine");});
+		createButton("Hydrogen", SettingsPanel,(ActionEvent e) -> {setCoords(16,"Hydrogen");});
+		createButton("Sodium", SettingsPanel,(ActionEvent e) -> {setCoords(17,"Sodium");});
+		createButton("Aluminium", SettingsPanel,(ActionEvent e) -> {setCoords(18,"Aluminium");});
+		createButton("1u", SettingsPanel,(ActionEvent e) -> {setCoords(19,"1u");});
+		createButton("5u", SettingsPanel,(ActionEvent e) -> {setCoords(20,"5u");});
+		createButton("10u", SettingsPanel,(ActionEvent e) -> {setCoords(21,"10u");});
+		createButton("15u", SettingsPanel,(ActionEvent e) -> {setCoords(22,"15u");});
+		createButton("20u", SettingsPanel,(ActionEvent e) -> {setCoords(23,"20u");});
+		createButton("25u", SettingsPanel,(ActionEvent e) -> {setCoords(24,"25u");});
+		createButton("30u", SettingsPanel,(ActionEvent e) -> {setCoords(25,"30u");});
+		createButton("50u", SettingsPanel,(ActionEvent e) -> {setCoords(26,"50u");});
+		createButton("100u", SettingsPanel,(ActionEvent e) -> {setCoords(27,"100u");});
+		createButton("DispencerStartPosition", SettingsPanel,(ActionEvent e) -> {setCoords(28,"Dispencer start position");});
+		createButton("setChemMasterStartPosition", SettingsPanel,(ActionEvent e) -> {setCoords(29,"Dispencer end position");});
+		createButton("setChemMasterStartPosition", SettingsPanel,(ActionEvent e) -> {setCoords(30,"ChemMaster start position");});
+		createButton("setChemMasterEndPosition", SettingsPanel,(ActionEvent e) -> {setCoords(31,"ChemMaster end position");});
 		Thread configFileThread = new Thread(() -> watchConfigFile(configFile));
 		configFileThread.start();		
 		menuPanel.add(openFolderButton, BorderLayout.WEST);
@@ -663,7 +665,7 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 		frame.setVisible(true);
 		timer.start();
 	}
-	public static void make(Object... instructions) {
+	public static void mix(Object... instructions) {
 	    for (Object instruction : instructions) {
 	        if (instruction instanceof int[][]) {
 	            int[][] coords = (int[][]) instruction;
@@ -748,7 +750,7 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 			int CarbonRow = 0;
 			int SugarRow = 0;
 			int ChlorineRow = 0;
-			int Phosphorus = 0;
+			int PhosphorusRow = 0;
 			int PotassiumRow = 0;
 			int RadiumRow = 0;
 			int SiliconRow = 0;
@@ -808,11 +810,11 @@ public class ChemistryHelperEN extends JFrame implements ActionListener {
 					Chlorine[0][0] = x;
 					Chlorine[0][1] = y;
 					ChlorineRow++;
-				} else if (Phosphorus < 1) {
-					Фосфор = new int[1][2];
-					Фосфор[0][0] = x;
-					Фосфор[0][1] = y;
-					Phosphorus++;
+				} else if (PhosphorusRow < 1) {
+					Phosphorus = new int[1][2];
+					Phosphorus[0][0] = x;
+					Phosphorus[0][1] = y;
+					PhosphorusRow++;
 				} else if (PotassiumRow < 1) {
 					Potassium = new int[1][2];
 					Potassium[0][0] = x;
